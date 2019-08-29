@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 	public float moveSpeed;
 	public int status; //   0 define cut, 1 define base, 2 define mutated
 	public int stamina;
+	public GameObject shadow;
 	
 	private bool run;
 	public bool stopPlayer;
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour
 	// Start is called before the first frame update
     void Start()
     {
+		shadow.SetActive(true);
 		anim = GetComponent<Animator>();
 		playerMoving = false;
 	}
@@ -108,6 +110,7 @@ public class PlayerController : MonoBehaviour
 	public void Fall()
 	{
 		anim.SetBool("Death", true);
+		shadow.SetActive(false);
 		transform.Translate(new Vector3(0f, -0.1f, 0f));
 	}
 

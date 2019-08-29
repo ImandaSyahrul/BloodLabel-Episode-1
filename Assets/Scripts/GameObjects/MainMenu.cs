@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
 	// Start is called before the first frame update
 	public GameObject optionsObject;
+	public EventSystem eventSystem;
+	public GameObject optionsButton;
+
     void Start()
     {
 		optionsObject.SetActive(false);
@@ -18,9 +22,13 @@ public class MainMenu : MonoBehaviour
     {
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
-			if (optionsObject.active == true) optionsObject.SetActive(false);
+			if (optionsObject.active == true)
+			{
+				optionsObject.SetActive(false);
+				eventSystem.SetSelectedGameObject(optionsButton);
+			}
 		}
-    }
+	}
 
 	public void Play()
 	{
@@ -30,7 +38,11 @@ public class MainMenu : MonoBehaviour
 
 	public void ExitGame()
 	{
-		Application.Quit();
+#if UNITY_EDITOR
+		UnityEditor.EditorApplication.isPlaying = false;
+#else
+		Application.Quit();	
+#endif
 		EventSystem.current.SetSelectedGameObject(null);
 	}
 	

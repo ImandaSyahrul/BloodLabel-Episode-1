@@ -1,17 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Prologue : MonoBehaviour
 {
 	//Game scenario for prolog
 	public GameObject player;
 	public GameObject transition;
+	public GameObject cinematicView;
 
 	public int scenarioCounter;
     // Start is called before the first frame update
     void Start()
     {
+		cinematicView.SetActive(false);
 		player.GetComponent<PlayerController>().CharacterStatus = 0;
 		scenarioCounter = 0;
 		StopCharacter();
@@ -56,5 +59,15 @@ public class Prologue : MonoBehaviour
 	void MakeHerFall()
 	{
 		player.GetComponent<PlayerController>().Fall();
+	}
+
+	void ActivateCinematic()
+	{
+		cinematicView.SetActive(true);
+	}
+
+	void DeactivateCinematic()
+	{
+		cinematicView.SetActive(false);
 	}
 }
