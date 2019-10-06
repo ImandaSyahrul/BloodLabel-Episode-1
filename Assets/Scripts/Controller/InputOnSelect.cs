@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using System.Runtime.InteropServices;
 
 public class InputOnSelect : MonoBehaviour
 {
 	public EventSystem eventSystem;
 	public GameObject selectedObject;
+	[DllImport("user32.dll")] static extern bool SetCursorPos(int X, int Y);
 
 	private bool isSelected;
 
@@ -15,7 +17,7 @@ public class InputOnSelect : MonoBehaviour
     {
         
     }
-
+	
     // Update is called once per frame
     void Update()
     {
@@ -23,6 +25,8 @@ public class InputOnSelect : MonoBehaviour
 		{
 			eventSystem.SetSelectedGameObject(selectedObject);
 			isSelected = true;
+			SetCursorPos(0, 0);
+			
 		}
     }
 
