@@ -1367,9 +1367,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 516700860}
+  - {fileID: 516700870}
   selectedCommands:
-  - {fileID: 516700868}
+  - {fileID: 516700873}
   variables: []
   description: 
   stepPause: 0
@@ -1653,7 +1653,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 11
   indentLevel: 0
-  storyText: I forced myself to move even though my right arm was cut off.
+  storyText: I forced myself to move even though my right arm was cutted off.
   description: 
   character: {fileID: 748739}
   portrait: {fileID: 0}
