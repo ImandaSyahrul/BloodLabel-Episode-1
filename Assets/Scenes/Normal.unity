@@ -749,6 +749,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1507206685}
   m_CullTransparentMesh: 0
+--- !u!1 &1902648184 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8712997516540658525, guid: 42775c661be959945bb43c7be88f5038,
+    type: 3}
+  m_PrefabInstance: {fileID: 1174874619}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1902648185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902648184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b6662a77f060140af968e1ef3f3972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 0}
+  maxStamina: 0
+  updatedStamina: 0
+  staminaIncrementPerSec: 0
+  staminaDecrementPerSec: 0
 --- !u!1 &2076219176
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 	public float[] listMoveSpeed = { 1, 5, 4 }, listRunning = { 1, 10, 9};
 	public float moveSpeed;
 	public int status; //   0 define cut, 1 define base, 2 define mutated
-	public int stamina;
+	// public int stamina;
 	public GameObject shadow;
 	
 	private bool run;
@@ -16,13 +16,27 @@ public class PlayerController : MonoBehaviour
 	private bool playerMoving;
 	private Vector2 lastMove;
 
+    public float maxStamina;
+    public float updatedStamina;
+    public float staminaIncrementPerSec;
+    public float staminaDecrementPerSec;
+
 	// Start is called before the first frame update
     void Start()
     {
 		shadow.SetActive(true);
 		anim = GetComponent<Animator>();
 		playerMoving = false;
+        setupStamina();
 	}
+
+    private void setupStamina()
+    {
+        maxStamina = 100;
+        updatedStamina = 100;
+        staminaIncrementPerSec = 1f;
+        staminaDecrementPerSec = 1.5f;
+    }
 
     // Update is called once per frame
     void Update()
@@ -65,6 +79,20 @@ public class PlayerController : MonoBehaviour
 	{
 		playerMoving = false;
 		Run = Input.GetKey(KeyCode.LeftShift) ? true : false;
+
+        if(Run)
+        {
+            updatedStamina -= staminaDecrementPerSec;
+            if (updatedStamina < 0)
+            {
+                updatedStamina = 0;
+                moveSpeed = listMoveSpeed[1];
+            }
+        } else
+        {
+            updatedStamina += staminaIncrementPerSec;
+            if (updatedStamina > maxStamina) updatedStamina = maxStamina;
+        }
 
 		if (status == 0)
 		{
