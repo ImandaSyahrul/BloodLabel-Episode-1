@@ -219,10 +219,10 @@ RectTransform:
   m_Father: {fileID: 1507206686}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -447, y: -325}
-  m_SizeDelta: {x: 333.7, y: 38.8}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 189.2, y: -35.2}
+  m_SizeDelta: {x: 333.7, y: 38.799988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &256945839
 MonoBehaviour:
@@ -672,6 +672,31 @@ PrefabInstance:
       propertyPath: status
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8712997516540658521, guid: 42775c661be959945bb43c7be88f5038,
+        type: 3}
+      propertyPath: maxStamina
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8712997516540658521, guid: 42775c661be959945bb43c7be88f5038,
+        type: 3}
+      propertyPath: stopPlayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8712997516540658521, guid: 42775c661be959945bb43c7be88f5038,
+        type: 3}
+      propertyPath: updatedStamina
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8712997516540658521, guid: 42775c661be959945bb43c7be88f5038,
+        type: 3}
+      propertyPath: staminaIncrementPerSec
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8712997516540658521, guid: 42775c661be959945bb43c7be88f5038,
+        type: 3}
+      propertyPath: staminaDecrementPerSec
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42775c661be959945bb43c7be88f5038, type: 3}
 --- !u!1 &1507206685
@@ -764,22 +789,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1902648184}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66b6662a77f060140af968e1ef3f3972, type: 3}
+  m_Script: {fileID: 11500000, guid: 32e6ab3c7bea8a14095fe9567e76cf15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 1902648188}
+  staminaBar: {fileID: 256945839}
+--- !u!114 &1902648188 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8712997516540658521, guid: 42775c661be959945bb43c7be88f5038,
+    type: 3}
+  m_PrefabInstance: {fileID: 1174874619}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902648184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4b00af4620e9d548b66a440b85e57dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerController: {fileID: 0}
-  maxStamina: 0
-  updatedStamina: 0
-  staminaIncrementPerSec: 0
-  staminaDecrementPerSec: 0
 --- !u!1 &2076219176
 GameObject:
   m_ObjectHideFlags: 0

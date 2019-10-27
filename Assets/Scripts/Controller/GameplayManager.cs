@@ -11,14 +11,14 @@ public class GameplayManager : MonoBehaviour
 	[SerializeField] PlayerController playerController;
     [SerializeField] private Slider staminaBar;
     void Start()
-    {
+	{
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (playerController != null) staminaBar.value = playerController.updatedStamina;
+        if (playerController != null) staminaBar.value = playerController.UpdatedStamina;
         else Debug.Log("NULL");
     }
 }
