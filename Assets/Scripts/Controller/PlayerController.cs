@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
 		get => isRunning;
 		set
 		{
+			// Change movement speed based on character status
 			if (value == true) moveSpeed = listRunning[status];
 			else moveSpeed = listMoveSpeed[status];
 			isRunning = value;
