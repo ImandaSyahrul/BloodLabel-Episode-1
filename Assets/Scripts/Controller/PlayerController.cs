@@ -80,21 +80,13 @@ public class PlayerController : MonoBehaviour
 		playerMoving = false;
 		Run = Input.GetKey(KeyCode.LeftShift) ? true : false;
 
-        if(Run)
+        if(updatedStamina < 0)
         {
-            updatedStamina -= staminaDecrementPerSec;
-            if (updatedStamina < 0)
-            {
-                updatedStamina = 0;
-                moveSpeed = listMoveSpeed[1];
-            }
-        } else
-        {
-            updatedStamina += staminaIncrementPerSec;
-            if (updatedStamina > maxStamina) updatedStamina = maxStamina;
+            updatedStamina = 0;
+            moveSpeed = listMoveSpeed[1];
         }
 
-		if (status == 0)
+        if (status == 0)
 		{
 			if (Input.GetAxisRaw("Vertical") < -0.5f)
 			{
@@ -128,7 +120,16 @@ public class PlayerController : MonoBehaviour
 				lastMove = new Vector2(0f, Input.GetAxisRaw("Vertical"));
 			}
 		}
-		anim.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
+
+
+        if (Run && this.playerMoving) updatedStamina -= staminaDecrementPerSec;
+        else
+        {
+            updatedStamina += staminaIncrementPerSec;
+            if (updatedStamina > maxStamina) updatedStamina = maxStamina;
+        }
+
+        anim.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
 		anim.SetFloat("MoveY", Input.GetAxisRaw("Vertical"));
 		anim.SetBool("PlayerMoving", playerMoving);
 		anim.SetFloat("LastMoveX", lastMove.x);

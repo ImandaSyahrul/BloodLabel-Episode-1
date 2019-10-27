@@ -196,8 +196,9 @@ GameObject:
   m_Component:
   - component: {fileID: 256945838}
   - component: {fileID: 256945839}
+  - component: {fileID: 256945840}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: StaminaBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -273,6 +274,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &256945840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256945837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32e6ab3c7bea8a14095fe9567e76cf15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &348520783
 GameObject:
   m_ObjectHideFlags: 0
@@ -767,19 +780,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66b6662a77f060140af968e1ef3f3972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerController: {fileID: 0}
-  maxStamina: 0
-  updatedStamina: 0
-  staminaIncrementPerSec: 0
-  staminaDecrementPerSec: 0
 --- !u!1 &2076219176
 GameObject:
   m_ObjectHideFlags: 0
