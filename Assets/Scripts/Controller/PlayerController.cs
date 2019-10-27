@@ -4,25 +4,50 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-	public float[] listMoveSpeed = { 1, 5, 4 }, listRunning = { 1, 10, 9};
+	public float[] 
+		listMoveSpeed = { 1, 5, 4 }, //Move speed variation
+		listRunning = { 1, 10, 9 }; //Running speed variation
 	public float moveSpeed;
 	public int status; //   0 define cut, 1 define base, 2 define mutated
 	// public int stamina;
 	public GameObject shadow;
 	
-	private bool run;
+	private bool isRunning;
 	public bool stopPlayer;
 	private Animator anim;
 	private bool playerMoving;
 	private Vector2 lastMove;
 
-    public float maxStamina;
-    public float updatedStamina;
-    public float staminaIncrementPerSec;
-    public float staminaDecrementPerSec;
+	[SerializeField] private float maxStamina;
+	[SerializeField] private float updatedStamina;
+	[SerializeField] private float staminaIncrementPerSec;
+    [SerializeField] private float staminaDecrementPerSec;
+
+	public float UpdatedStamina
+	{
+		get
+		{
+			return updatedStamina;
+		}
+		set
+		{
+			updatedStamina = value;
+		}
+	}
+
+	public bool Run
+	{
+		get => isRunning;
+		set
+		{
+			if (value == true) moveSpeed = listRunning[status];
+			else moveSpeed = listMoveSpeed[status];
+			isRunning = value;
+		}
+	}
 
 	// Start is called before the first frame update
-    void Start()
+	void Start()
     {
 		shadow.SetActive(true);
 		anim = GetComponent<Animator>();
@@ -30,13 +55,6 @@ public class PlayerController : MonoBehaviour
         setupStamina();
 	}
 
-    private void setupStamina()
-    {
-        maxStamina = 100;
-        updatedStamina = 100;
-        staminaIncrementPerSec = 1f;
-        staminaDecrementPerSec = 1.5f;
-    }
 
     // Update is called once per frame
     void Update()
@@ -64,15 +82,12 @@ public class PlayerController : MonoBehaviour
 		}	
 	}
 
-	public bool Run
+	private void setupStamina()
 	{
-		get => run;
-		set
-		{
-			if (value == true) moveSpeed = listRunning[status];
-			else moveSpeed = listMoveSpeed[status];
-			run = value;
-		}
+		maxStamina = 100;
+		updatedStamina = 100;
+		staminaIncrementPerSec = 0.75f;
+		staminaDecrementPerSec = 1f;
 	}
 
 	private void Move()
@@ -86,7 +101,7 @@ public class PlayerController : MonoBehaviour
             moveSpeed = listMoveSpeed[1];
         }
 
-        if (status == 0)
+        if (status == 0) // Only for hospital scene
 		{
 			if (Input.GetAxisRaw("Vertical") < -0.5f)
 			{
@@ -105,7 +120,7 @@ public class PlayerController : MonoBehaviour
 				Debug.Log("Left button clicked");
 			}
 		}
-		else
+		else // Normal condition
 		{
 			if (Input.GetAxisRaw("Horizontal") > 0.5f || Input.GetAxisRaw("Horizontal") < -0.5f)
 			{
@@ -119,6 +134,7 @@ public class PlayerController : MonoBehaviour
 				playerMoving = true;
 				lastMove = new Vector2(0f, Input.GetAxisRaw("Vertical"));
 			}
+			if (playerMoving && Run) updatedStamina -= staminaDecrementPerSec;
 		}
 
 
