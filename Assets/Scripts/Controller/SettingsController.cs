@@ -9,6 +9,8 @@ public class SettingsController : MonoBehaviour
 {
 	public AudioMixer audioMixer;
 	public Dropdown resolutionDropdown;
+	public Text resolutionText;
+	public Text displayMode;
 
 	Resolution[] resolutions;
 
