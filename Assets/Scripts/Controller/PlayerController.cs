@@ -138,10 +138,10 @@ public class PlayerController : MonoBehaviour
 				playerMoving = true;
 				lastMove = new Vector2(0f, Input.GetAxisRaw("Vertical"));
 			}
-			if (playerMoving && Run) updatedStamina -= staminaDecrementPerSec;
 		}
 
-		if (!Run)
+		if (Run && playerMoving) updatedStamina -= staminaDecrementPerSec;
+		else
 		{
 			if (!playerMoving) updatedStamina += staminaIncrementPerSec;
 			else updatedStamina += (staminaIncrementPerSec / 4);
