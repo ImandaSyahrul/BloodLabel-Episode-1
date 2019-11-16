@@ -134,20 +134,20 @@ public class SettingsHandler : MonoBehaviour
 		else
 		{
 			string groupName = mixerGroups[currIndex-2].ToString();
-			Debug.Log(groupName);
+			//Debug.Log(groupName);
 			if (Input.GetKeyDown(KeyCode.LeftArrow))
 			{
 				mixerValues[currIndex - 2] -= 2.0f;
 				if (mixerValues[currIndex - 2] < -80.0f) mixerValues[currIndex - 2] = -80.0f;
 				groupValues[currIndex - 2].text = ((int)(mixerValues[currIndex - 2] + 80.0f)).ToString();
-				setVolume(groupName, mixerValues[currIndex - 2]);
+				//setVolume(groupName, mixerValues[currIndex - 2]);
 			}
 			else if (Input.GetKeyDown(KeyCode.RightArrow))
 			{
 				mixerValues[currIndex - 2] += 2.0f;
 				if (mixerValues[currIndex - 2] > 20.0f) mixerValues[currIndex - 2] = 20.0f;
 				groupValues[currIndex - 2].text = ((int)(mixerValues[currIndex - 2] + 80.0f)).ToString();
-				setVolume(groupName, mixerValues[currIndex - 2]);
+				//setVolume(groupName, mixerValues[currIndex - 2]);
 			}
 		}
 		
