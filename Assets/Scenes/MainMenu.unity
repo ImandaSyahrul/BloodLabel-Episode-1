@@ -850,7 +850,6 @@ GameObject:
   - component: {fileID: 880125040}
   - component: {fileID: 880125042}
   - component: {fileID: 880125041}
-  - component: {fileID: 880125043}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -921,35 +920,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 880125039}
   m_CullTransparentMesh: 0
---- !u!114 &880125043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 880125039}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9517a33e4d875d74eacc065cfcc2c779, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  settingPanels:
-  - {fileID: 1831579208}
-  - {fileID: 1790137871}
-  - {fileID: 1298808579}
-  - {fileID: 1953608072}
-  - {fileID: 19749083}
-  audioMixer: {fileID: 24100000, guid: f71a0a29cd5999442a4ed114742c79b4, type: 2}
-  mixerGroups:
-  - {fileID: 24300002, guid: f71a0a29cd5999442a4ed114742c79b4, type: 2}
-  - {fileID: 243229367318585534, guid: f71a0a29cd5999442a4ed114742c79b4, type: 2}
-  - {fileID: 243414195737451848, guid: f71a0a29cd5999442a4ed114742c79b4, type: 2}
-  viewToggle: {fileID: 1133507}
-  viewValues: {fileID: 536569572}
-  groupValues:
-  - {fileID: 1954275413}
-  - {fileID: 1430584239}
-  - {fileID: 967580068}
 --- !u!1 &967580066
 GameObject:
   m_ObjectHideFlags: 0
@@ -1180,6 +1150,7 @@ GameObject:
   - component: {fileID: 1022760844}
   - component: {fileID: 1022760843}
   - component: {fileID: 1022760842}
+  - component: {fileID: 1022760845}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1267,6 +1238,35 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!114 &1022760845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022760840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9517a33e4d875d74eacc065cfcc2c779, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settingPanels:
+  - {fileID: 1831579208}
+  - {fileID: 1790137871}
+  - {fileID: 1298808579}
+  - {fileID: 1953608072}
+  - {fileID: 19749083}
+  audioMixer: {fileID: 24100000, guid: f71a0a29cd5999442a4ed114742c79b4, type: 2}
+  mixerGroups:
+  - {fileID: 24300002, guid: f71a0a29cd5999442a4ed114742c79b4, type: 2}
+  - {fileID: 243229367318585534, guid: f71a0a29cd5999442a4ed114742c79b4, type: 2}
+  - {fileID: 243414195737451848, guid: f71a0a29cd5999442a4ed114742c79b4, type: 2}
+  viewToggle: {fileID: 1133507}
+  viewValues: {fileID: 536569572}
+  groupValues:
+  - {fileID: 1954275413}
+  - {fileID: 1430584239}
+  - {fileID: 967580068}
 --- !u!1 &1027262606
 GameObject:
   m_ObjectHideFlags: 0
