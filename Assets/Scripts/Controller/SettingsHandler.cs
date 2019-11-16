@@ -96,7 +96,7 @@ public class SettingsHandler : MonoBehaviour
 					if (currentResolutionIndex > 0)
 					{
 						currentResolutionIndex -= 1;
-						Screen.SetResolution(resolutions[currentResolutionIndex].width, resolutions[currentResolutionIndex].height, false);
+						Screen.SetResolution(resolutions[currentResolutionIndex].width, resolutions[currentResolutionIndex].height, Screen.fullScreen);
 						viewValues.text = optionsResolution[currentResolutionIndex];
 					}
 				}
@@ -105,7 +105,7 @@ public class SettingsHandler : MonoBehaviour
 					if (currentResolutionIndex < resolutions.Length)
 					{
 						currentResolutionIndex += 1;
-						Screen.SetResolution(resolutions[currentResolutionIndex].width, resolutions[currentResolutionIndex].height, false);
+						Screen.SetResolution(resolutions[currentResolutionIndex].width, resolutions[currentResolutionIndex].height, Screen.fullScreen);
 						viewValues.text = optionsResolution[currentResolutionIndex];
 					}
 				}
